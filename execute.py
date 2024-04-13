@@ -81,7 +81,7 @@ def execute(task_args):
     )
 
     training_args = TrainingArguments(
-        output_dir="my_model", evaluation_strategy="epoch", save_strategy='epoch', seed=task_args['seed']
+        output_dir="my_model", evaluation_strategy="epoch", save_strategy='epoch', seed=task_args['seed'], torch_compile= True , fp16= True,tf32= True,per_device_train_batch_size=32
     )
 
     trainer = Trainer(
